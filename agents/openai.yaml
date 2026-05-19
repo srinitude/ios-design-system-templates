@@ -1,0 +1,4 @@
+interface:
+  display_name: "iOS Design System Templates"
+  short_description: "Generate deterministic iOS template YAML"
+  default_prompt: "Use $ios-design-system-templates with these reference images to generate a complete deterministic iOS template YAML contract."
