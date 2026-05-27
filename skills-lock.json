@@ -1,0 +1,14 @@
+{
+  "skills": [
+    {
+      "name": "ios-design-system-templates",
+      "version": "0.1.0",
+      "path": "skills/ios-design-system-templates",
+      "description": "Use when reference images, screenshots, moodboards, or iOS organism YAML should become a complete deterministic YAML inventory of iOS design-system templates. Invokes ios-design-system-organisms first, then extrapolates reusable screen, surface, flow, modal, state, and accessibility templates with strict no-null/no-empty/no-unknown validation.",
+      "tags": [
+        "agent-skill",
+        "skills.sh"
+      ]
+    }
+  ]
+}

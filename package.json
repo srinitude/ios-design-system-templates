@@ -1,0 +1,27 @@
+{
+  "name": "@srinitude/ios-design-system-templates",
+  "version": "0.1.0",
+  "description": "Use when reference images, screenshots, moodboards, or iOS organism YAML should become a complete deterministic YAML inventory of iOS design-system templates. Invokes ios-design-sy",
+  "license": "Apache-2.0",
+  "author": "Kiren Srinivasan <kiren@fantasymetals.com>",
+  "homepage": "https://github.com/srinitude/ios-design-system-templates#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/srinitude/ios-design-system-templates.git"
+  },
+  "bugs": {
+    "url": "https://github.com/srinitude/ios-design-system-templates/issues"
+  },
+  "keywords": [
+    "agent-skill",
+    "skills.sh",
+    "ios-design-system-templates"
+  ],
+  "files": [
+    "skills/",
+    "skills-lock.json",
+    "LICENSE",
+    "NOTICE",
+    "README.md"
+  ]
+}

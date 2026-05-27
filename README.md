@@ -1,6 +1,6 @@
 # iOS Design System Templates
 
-[![skills.sh compatible](https://img.shields.io/badge/skills.sh-compatible-111111?style=flat-square)](https://skills.sh/s/srinitude/ios-design-system-templates)
+[![skills.sh](https://skills.sh/b/srinitude/ios-design-system-templates)](https://skills.sh/s/srinitude/ios-design-system-templates)
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache--2.0-blue.svg)](LICENSE)
 [![Validate](https://github.com/srinitude/ios-design-system-templates/actions/workflows/validate.yml/badge.svg)](https://github.com/srinitude/ios-design-system-templates/actions/workflows/validate.yml)
 
@@ -30,16 +30,23 @@ npx skills add srinitude/ios-design-system-templates --list
 ## Package Structure
 
 ```text
-.
-├── SKILL.md
-├── agents/
-│   └── openai.yaml
-├── references/
-│   ├── agent-skills-compliance.md
-│   └── templates-yaml-contract.md
-├── requirements.txt
-└── scripts/
-    └── validate-ios-templates-yaml.py
+ios-design-system-templates/
+|-- skills/
+|   `-- ios-design-system-templates/
+|       |-- agents/
+|       |   `-- openai.yaml
+|       |-- references/
+|       |   |-- agent-skills-compliance.md
+|       |   `-- templates-yaml-contract.md
+|       |-- scripts/
+|       |   `-- validate-ios-templates-yaml.py
+|       |-- requirements.txt
+|       `-- SKILL.md
+|-- skills-lock.json
+|-- package.json
+|-- README.md
+|-- LICENSE
+`-- NOTICE
 ```
 
 ## Validation
@@ -47,33 +54,33 @@ npx skills add srinitude/ios-design-system-templates --list
 Validate the skill package:
 
 ```bash
-skills-ref validate "$PWD"
+skills-ref validate "$PWD/skills/ios-design-system-templates"
 ```
 
 If `skills-ref` is not installed, run the official reference implementation:
 
 ```bash
 git clone --depth 1 https://github.com/agentskills/agentskills /tmp/agentskills
-uv run --project /tmp/agentskills/skills-ref skills-ref validate "$PWD"
+uv run --project /tmp/agentskills/skills-ref skills-ref validate "$PWD/skills/ios-design-system-templates"
 ```
 
 Validate the bundled script:
 
 ```bash
-python3 -m py_compile scripts/validate-ios-templates-yaml.py
-uv run --with-requirements requirements.txt python scripts/validate-ios-templates-yaml.py --help
+python3 -m py_compile skills/ios-design-system-templates/scripts/validate-ios-templates-yaml.py
+uv run --with-requirements skills/ios-design-system-templates/requirements.txt python skills/ios-design-system-templates/scripts/validate-ios-templates-yaml.py --help
 ```
 
 Validate a generated template artifact:
 
 ```bash
-python3 scripts/validate-ios-templates-yaml.py path/to/templates.yaml
+python3 skills/ios-design-system-templates/scripts/validate-ios-templates-yaml.py path/to/templates.yaml
 ```
 
 When `uv` is available, the same template validator can be run through the local environment:
 
 ```bash
-uv run --with-requirements requirements.txt python scripts/validate-ios-templates-yaml.py path/to/templates.yaml
+uv run --with-requirements skills/ios-design-system-templates/requirements.txt python skills/ios-design-system-templates/scripts/validate-ios-templates-yaml.py path/to/templates.yaml
 ```
 
 The same checks run in GitHub Actions for pushes and pull requests.
@@ -81,14 +88,14 @@ The same checks run in GitHub Actions for pushes and pull requests.
 ## Requirements
 
 - Python 3.9 or newer.
-- PyYAML for YAML validation, installed from `requirements.txt`, through `uv`, or through an existing Python environment.
+- PyYAML for YAML validation, installed from `skills/ios-design-system-templates/requirements.txt`, through `uv`, or through an existing Python environment.
 - Access to `ios-design-system-organisms` or an equivalent validated iOS organism YAML artifact when generating template inventories.
 
 ## Contributing
 
 Contributions are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or pull request.
 
-Please keep changes focused on the portable skill package: update `SKILL.md` for runbook behavior, `references/` for long-form schema or compliance material, and `scripts/` for deterministic validation logic.
+Please keep changes focused on the portable skill package: update `skills/ios-design-system-templates/SKILL.md` for runbook behavior, `skills/ios-design-system-templates/references/` for long-form schema or compliance material, and `skills/ios-design-system-templates/scripts/` for deterministic validation logic.
 
 ## Security
 

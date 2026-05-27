@@ -36,12 +36,12 @@ jobs:
       - name: Validate skill package
         run: |
           git clone --depth 1 https://github.com/agentskills/agentskills /tmp/agentskills
-          uv run --project /tmp/agentskills/skills-ref skills-ref validate "$PWD"
+          uv run --project /tmp/agentskills/skills-ref skills-ref validate "$PWD/skills/ios-design-system-templates"
 
       - name: Validate scripts
         run: |
-          python3 -m py_compile scripts/validate-ios-templates-yaml.py
-          uv run --with-requirements requirements.txt python scripts/validate-ios-templates-yaml.py --help
+          python3 -m py_compile skills/ios-design-system-templates/scripts/validate-ios-templates-yaml.py
+          uv run --with-requirements skills/ios-design-system-templates/requirements.txt python skills/ios-design-system-templates/scripts/validate-ios-templates-yaml.py --help
 
       - name: Validate skills CLI discovery
         run: npx skills add "$PWD" --list
